@@ -1,6 +1,6 @@
-import type { searchResult } from "../../types";
+import type { SearchResult } from "../../types";
 
-const NutrientCard = ({ result }: { result: searchResult }) => {
+const NutrientCard = ({ result }: { result: SearchResult }) => {
   return (
     <div className="flex flex-row justify-between items-center gap-3 w-full p-4 bg-(--bg-secondary) rounded-2xl shadow-md text-xs">
       <div className="flex flex-col flex-1 min-w-0 text-left">
