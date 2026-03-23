@@ -10,7 +10,7 @@ export const searchProducts = async (
   searchQuery: string,
 ): Promise<SearchResult[]> => {
   const response = await axiosInstance.get(
-    `cgi/search.pl?search_terms=${searchQuery}&search_simple=1&page_size=10&json=1`,
+    `cgi/search.pl?search_terms=${searchQuery}&search_simple=1&page_size=5&json=1`,
   );
 
   const products = response.data.products.map((product: any) => ({
