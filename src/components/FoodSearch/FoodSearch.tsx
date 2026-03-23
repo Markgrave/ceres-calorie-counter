@@ -36,22 +36,24 @@ const FoodSearch = () => {
   }, [debouncedSearchTerm]);
 
   return (
-    <div className="w-3/4 mx-auto flex flex-col items-center gap-4 px-4">
-      <input
-        type="text"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        placeholder="Search for a product..."
-        className="w-full rounded-2xl p-3 shadow-md bg-linear-to-b from-(--bg-secondary) to-(--bg-primary)"
-      />
-      {loading && <p>Loading...</p>}
-      <ul className="flex flex-col gap-2 w-full">
-        {results.map((result) => (
-          <li key={result.id} className="text-sm w-full">
-            <NutrientCard result={result} />
-          </li>
-        ))}
-      </ul>
+    <div className="w-full md:w-1/2 h-fit bg-(--bg-secondary) rounded-2xl p-3 shadow-md">
+      <div className="flex flex-col justify-start items-start h-full bg-(--bg-secondary) border-2 border-gray-100 rounded-2xl px-6 py-6 shadow-md gap-1">
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="Search for a product..."
+          className="w-full rounded-2xl p-3 shadow-md bg-linear-to-b from-(--bg-secondary) to-(--bg-primary)"
+        />
+        {loading && <p>Loading...</p>}
+        <ul className="flex flex-col gap-2 w-full">
+          {results.map((result) => (
+            <li key={result.id} className="text-sm w-full">
+              <NutrientCard result={result} />
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
