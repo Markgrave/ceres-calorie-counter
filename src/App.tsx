@@ -1,5 +1,32 @@
+import DailyLog from "./components/DailyLog/DailyLog.tsx";
+import Header from "./components/Header/Header.tsx";
+import Meals from "./components/Meals/Meals.tsx";
+import FoodSearch from "./components/FoodSearch/FoodSearch.tsx";
+import SetGoalsForm from "./components/setGoalsForm/setGoalsForm.tsx";
+
+import { useState } from "react";
+
 const App = () => {
-  return <></>;
+  const [goalsOpen, setGoalsOpen] = useState<boolean>(false);
+
+  return (
+    <main
+      className={`flex align-center justify-start flex-col gap-4 p-6 w-full ${goalsOpen ? "h-screen overflow-hidden" : "h-auto"}`}
+    >
+      <Header setGoalsOpen={setGoalsOpen} />
+
+      <section className="flex flex-col md:flex-row gap-4 w-full h-1/2">
+        <DailyLog />
+      </section>
+
+      <section className="flex flex-col md:flex-row gap-4 w-full h-1/2">
+        <Meals />
+        <FoodSearch />
+      </section>
+
+      {goalsOpen && <SetGoalsForm setGoalsOpen={setGoalsOpen} />}
+    </main>
+  );
 };
 
 export default App;
