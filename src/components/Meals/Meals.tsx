@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { MdOutlineFreeBreakfast } from "react-icons/md";
 import { FaBowlFood } from "react-icons/fa6";
@@ -20,6 +20,13 @@ const Meals = () => {
   const [addSnack, setAddSnack] = useState<boolean>(false);
 
   const dailyEntries = entries.filter((entry) => entry.date === selectedDate);
+
+  useEffect(() => {
+    setAddBreakfast(false);
+    setAddLunch(false);
+    setAddDinner(false);
+    setAddSnack(false);
+  }, [selectedDate]);
 
   return (
     <div className="w-full md:w-1/2 h-fit bg-(--bg-secondary) rounded-2xl p-3 shadow-md">

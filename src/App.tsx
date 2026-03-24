@@ -2,7 +2,7 @@ import DailyLog from "./components/DailyLog/DailyLog.tsx";
 import Header from "./components/Header/Header.tsx";
 import Meals from "./components/Meals/Meals.tsx";
 import FoodSearch from "./components/FoodSearch/FoodSearch.tsx";
-import SetGoalsForm from "./components/setGoalsForm/setGoalsForm.tsx";
+import SetGoalsForm from "./components/SetGoalsForm/SetGoalsForm.tsx";
 
 import { useState } from "react";
 
