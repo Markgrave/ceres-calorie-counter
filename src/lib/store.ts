@@ -21,6 +21,7 @@ const initialState: Pick<CalorieState, "entries" | "goals" | "selectedDate"> = {
     protein: 50,
     carbs: 200,
     fat: 70,
+    goalType: "custom",
   },
   selectedDate: format(new Date(), "yyyy-MM-dd"),
 };
