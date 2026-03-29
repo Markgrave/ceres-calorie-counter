@@ -63,7 +63,7 @@ const DatePicker = () => {
         <button
           ref={buttonRef}
           onClick={() => setShow(!show)}
-          className="text-sm md:text-base font-bold tracking-wider shadow-sm rounded-2xl py-1 px-2 cursor-pointer"
+          className="text-sm md:text-base font-bold tracking-wider shadow-sm rounded-2xl py-1 px-2 cursor-pointer dark:bg-(--dark-bg-quaternary)"
         >
           {format(parsedDate, "E, do")} of {format(parsedDate, "MMMM")}
         </button>
@@ -80,7 +80,7 @@ const DatePicker = () => {
         <AnimatePresence>
           <motion.div
             ref={containerRef}
-            className="w-fit h-fit flex items-center justify-center bg-(--bg-primary) p-3 rounded-2xl shadow-2xl mb-2"
+            className="w-fit h-fit flex items-center justify-center bg-(--bg-primary) dark:bg-(--dark-bg-quaternary) p-3 rounded-2xl shadow-2xl mb-2"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.85 }}
@@ -92,8 +92,8 @@ const DatePicker = () => {
               selected={parsedDate}
               onSelect={handleSelect}
               classNames={{
-                today: `${defaultClassNames.today} text-(--protein)`,
-                selected: `${defaultClassNames.selected} text-black`,
+                today: `${defaultClassNames.today} text-(--primary) dark:text-white`,
+                selected: `${defaultClassNames.selected}`,
                 root: `${defaultClassNames.root}`,
                 chevron: ``,
               }}

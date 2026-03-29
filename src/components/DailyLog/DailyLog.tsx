@@ -9,8 +9,8 @@ const DailyLog = () => {
   const dailyEntries = entries.filter((entry) => entry.date === selectedDate);
 
   return (
-    <div className="w-full md:w-3/5 h-full bg-(--bg-secondary) rounded-2xl p-3 shadow-md">
-      <div className="flex flex-col justify-between items-center h-full bg-(--bg-secondary) border-2 border-gray-100 rounded-2xl p-6 md:p-10 shadow-md relative">
+    <div className="w-full md:w-3/5 h-full bg-(--bg-secondary) dark:bg-(--dark-bg-secondary) rounded-2xl p-3 shadow-md">
+      <div className="flex flex-col justify-between items-center h-full bg-(--bg-secondary) dark:bg-(--dark-bg-tertiary) border-2 border-gray-100 dark:border-gray-700 rounded-2xl p-6 md:p-10 shadow-md relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2">
           <DatePicker />
         </div>

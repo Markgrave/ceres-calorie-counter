@@ -47,7 +47,7 @@ const AddFoodForm = ({ onClose, mealType, existingEntry }: FormProps) => {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.2 }}
-      className="flex w-full flex-row justify-between items-center gap-6 mb-2 mt-4 rounded-lg p-2 bg-gray-200"
+      className="flex w-full flex-row justify-between items-center gap-6 mb-2 mt-4 rounded-lg p-2 bg-gray-200 dark:bg-(--dark-bg-quaternary)"
     >
       <form
         className="flex flex-col items-stretch w-full gap-2"

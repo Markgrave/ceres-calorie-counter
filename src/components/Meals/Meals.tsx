@@ -30,10 +30,10 @@ const Meals = () => {
   }, [selectedDate]);
 
   return (
-    <div className="w-full md:w-1/2 h-fit bg-(--bg-secondary) rounded-2xl p-3 shadow-md">
-      <div className="flex flex-col justify-start items-center h-full bg-(--bg-secondary) border-2 border-gray-100 rounded-2xl px-6 pt-6 pb-0 md:p-10 shadow-md gap-1">
+    <div className="w-full md:w-1/2 h-fit bg-(--bg-secondary) dark:bg-(--dark-bg-secondary) rounded-2xl p-3 shadow-md">
+      <div className="flex flex-col justify-start items-center h-full bg-(--bg-secondary) dark:bg-(--dark-bg-tertiary) border-2 border-gray-100 dark:border-gray-700 rounded-2xl px-6 pt-6 pb-0 md:p-10 shadow-md gap-1">
         <div className="flex flex-row items-center w-full gap-2">
-          <MdOutlineFreeBreakfast className="text-black" />
+          <MdOutlineFreeBreakfast className="text-black dark:text-white" />
           <h2 className="text-xl font-bold">Breakfast</h2>
         </div>
 
@@ -58,13 +58,13 @@ const Meals = () => {
           )}
 
           <Button onClick={() => setAddBreakfast(true)} disabled={addBreakfast}>
-            <IoIosAdd className="text-black text-3xl" />
+            <IoIosAdd className="text-black dark:text-white text-3xl" />
             <p>Add Food</p>
           </Button>
         </div>
 
         <div className="flex flex-row items-center w-full gap-2">
-          <FaBowlFood className="text-black" />
+          <FaBowlFood className="text-black dark:text-white" />
           <h2 className="text-xl font-bold">Lunch</h2>
         </div>
 
@@ -86,13 +86,13 @@ const Meals = () => {
           )}
 
           <Button onClick={() => setAddLunch(true)} disabled={addLunch}>
-            <IoIosAdd className="text-black text-3xl" />
+            <IoIosAdd className="text-black dark:text-white text-3xl" />
             <p>Add Food</p>
           </Button>
         </div>
 
         <div className="flex flex-row items-center w-full gap-2">
-          <MdDinnerDining className="text-black" />
+          <MdDinnerDining className="text-black dark:text-white" />
           <h2 className="text-xl font-bold">Dinner</h2>
         </div>
 
@@ -117,13 +117,13 @@ const Meals = () => {
           )}
 
           <Button onClick={() => setAddDinner(true)} disabled={addDinner}>
-            <IoIosAdd className="text-black text-3xl" />
+            <IoIosAdd className="text-black dark:text-white text-3xl" />
             <p>Add Food</p>
           </Button>
         </div>
 
         <div className="flex flex-row items-center w-full gap-2">
-          <MdCookie className="text-black" />
+          <MdCookie className="text-black dark:text-white" />
           <h2 className="text-xl font-bold">Snacks</h2>
         </div>
 
@@ -145,7 +145,7 @@ const Meals = () => {
           )}
 
           <Button onClick={() => setAddSnack(true)} disabled={addSnack}>
-            <IoIosAdd className="text-black text-3xl" />
+            <IoIosAdd className="text-black dark:text-white text-3xl" />
             <p>Add Food</p>
           </Button>
         </div>

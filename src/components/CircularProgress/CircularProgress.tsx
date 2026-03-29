@@ -2,15 +2,15 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { useCalorieStore } from "../../lib/store";
 
-const styles = buildStyles({
-  pathColor: "black",
-  textColor: "black",
-  trailColor: "var(--bg-tertiary)",
-  pathTransitionDuration: 0.5,
-});
-
 const CircularProgress = () => {
-  const { entries, goals, selectedDate } = useCalorieStore();
+  const { entries, goals, selectedDate, theme } = useCalorieStore();
+
+  const styles = buildStyles({
+    pathColor: theme === "dark" ? "white" : "black",
+    textColor: theme === "dark" ? "white" : "black",
+    trailColor: "var(--bg-tertiary)",
+    pathTransitionDuration: 0.5,
+  });
 
   const dailyEntries = entries.filter((entry) => entry.date === selectedDate);
 

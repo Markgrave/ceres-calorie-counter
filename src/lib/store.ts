@@ -7,14 +7,19 @@ interface CalorieState {
   entries: FoodEntry[];
   goals: Goal;
   selectedDate: string;
+  theme: "light" | "dark";
   addEntry: (entry: FoodEntry) => void;
   updateEntry: (entry: FoodEntry) => void;
   removeEntry: (id: string) => void;
   setGoals: (goals: Goal) => void;
   setSelectedDate: (date: string) => void;
+  toggleTheme: () => void;
 }
 
-const initialState: Pick<CalorieState, "entries" | "goals" | "selectedDate"> = {
+const initialState: Pick<
+  CalorieState,
+  "entries" | "goals" | "selectedDate" | "theme"
+> = {
   entries: [],
   goals: {
     calories: 2000,
@@ -24,6 +29,7 @@ const initialState: Pick<CalorieState, "entries" | "goals" | "selectedDate"> = {
     goalType: "custom",
   },
   selectedDate: format(new Date(), "yyyy-MM-dd"),
+  theme: "light",
 };
 
 export const useCalorieStore = create<CalorieState>()(
@@ -43,6 +49,8 @@ export const useCalorieStore = create<CalorieState>()(
         })),
       setGoals: (goals: Goal) => set({ goals }),
       setSelectedDate: (date: string) => set({ selectedDate: date }),
+      toggleTheme: () =>
+        set((state) => ({ theme: state.theme === "light" ? "dark" : "light" })),
     })),
     {
       name: "ceres-storage",

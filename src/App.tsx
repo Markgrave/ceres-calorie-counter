@@ -3,15 +3,17 @@ import Header from "./components/Header/Header.tsx";
 import Meals from "./components/Meals/Meals.tsx";
 import FoodSearch from "./components/FoodSearch/FoodSearch.tsx";
 import SetGoalsForm from "./components/SetGoalsForm/SetGoalsForm.tsx";
+import { useCalorieStore } from "./lib/store";
 
 import { useState } from "react";
 
 const App = () => {
   const [goalsOpen, setGoalsOpen] = useState<boolean>(false);
+  const { theme } = useCalorieStore();
 
   return (
     <main
-      className={`flex align-center justify-start flex-col gap-4 p-6 w-full ${goalsOpen ? "h-screen overflow-hidden" : "h-auto"}`}
+      className={`flex align-center justify-start flex-col gap-4 p-6 w-full ${goalsOpen ? "h-screen overflow-hidden" : "h-auto"} ${theme === "dark" ? "dark" : "light"} bg-(--bg-primary) dark:bg-(--dark-bg-primary) dark:text-[#f8f9fa]`}
     >
       <Header setGoalsOpen={setGoalsOpen} />
 

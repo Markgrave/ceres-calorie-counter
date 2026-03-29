@@ -22,7 +22,7 @@ const FoodEntryItem = ({ entry, onDelete }: FoodEntryItemProps) => {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.2 }}
-      className="flex flex-row justify-between gap-3 w-full px-4 py-2 bg-(--bg-secondary) rounded-2xl shadow-md"
+      className="flex flex-row justify-between gap-3 w-full px-4 py-2 bg-(--bg-secondary) dark:bg-(--dark-bg-quaternary) rounded-2xl shadow-md"
     >
       <div className="flex flex-row justify-between items-center w-3/5">
         <div>
@@ -58,13 +58,13 @@ const FoodEntryItem = ({ entry, onDelete }: FoodEntryItemProps) => {
           className="bg-gray-200 p-2 rounded-lg hover:bg-gray-300 transition-colors cursor-pointer"
           onClick={() => setIsEditing(!isEditing)}
         >
-          <FaPen className="text-md" />
+          <FaPen className="text-md dark:text-(--dark-bg-tertiary)" />
         </button>
         <button
           className="bg-gray-200 p-2 rounded-lg hover:bg-gray-300 transition-colors cursor-pointer"
           onClick={() => onDelete(entry.id)}
         >
-          <FaTrashAlt className="text-md" />
+          <FaTrashAlt className="text-md dark:text-(--dark-bg-tertiary)" />
         </button>
       </div>
     </motion.div>
