@@ -3,6 +3,7 @@ import Header from "./components/Header/Header.tsx";
 import Meals from "./components/Meals/Meals.tsx";
 import FoodSearch from "./components/FoodSearch/FoodSearch.tsx";
 import SetGoalsForm from "./components/SetGoalsForm/SetGoalsForm.tsx";
+import WeekChart from "./components/WeekChart/WeekChart.tsx";
 import { useCalorieStore } from "./lib/store";
 
 import { useState } from "react";
@@ -19,6 +20,7 @@ const App = () => {
 
       <section className="flex flex-col md:flex-row gap-4 w-full h-1/2">
         <DailyLog />
+        <WeekChart />
       </section>
 
       <section className="flex flex-col md:flex-row gap-4 w-full h-1/2">
