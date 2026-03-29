@@ -3,6 +3,7 @@ import { IoMdCheckmark } from "react-icons/io";
 
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { isSameDay, compareAsc } from "date-fns";
+import { motion } from "framer-motion";
 
 import { useCalorieStore } from "../../lib/store";
 import type { FoodEntry } from "../../types";
@@ -40,7 +41,14 @@ const AddFoodForm = ({ onClose, mealType, existingEntry }: FormProps) => {
   };
 
   return (
-    <div className="flex w-full flex-row justify-between items-center gap-6 mb-2 mt-4 rounded-lg p-2 bg-gray-200">
+    <motion.div
+      layout
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.95 }}
+      transition={{ duration: 0.2 }}
+      className="flex w-full flex-row justify-between items-center gap-6 mb-2 mt-4 rounded-lg p-2 bg-gray-200"
+    >
       <form
         className="flex flex-col items-stretch w-full gap-2"
         onSubmit={handleSubmit(onSubmit)}
@@ -129,7 +137,7 @@ const AddFoodForm = ({ onClose, mealType, existingEntry }: FormProps) => {
           <RxCross1 className="text-lg text-gray-600" />
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

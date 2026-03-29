@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
 
 import { MdOutlineFreeBreakfast } from "react-icons/md";
 import { FaBowlFood } from "react-icons/fa6";
@@ -37,15 +38,17 @@ const Meals = () => {
         </div>
 
         <div className="flex flex-col gap-2 px-6 w-full items-start mb-6">
-          {dailyEntries
-            .filter((entry) => entry.type === "breakfast")
-            .map((entry: FoodEntry) => (
-              <FoodEntryItem
-                key={entry.id}
-                entry={entry}
-                onDelete={removeEntry}
-              />
-            ))}
+          <AnimatePresence>
+            {dailyEntries
+              .filter((entry) => entry.type === "breakfast")
+              .map((entry: FoodEntry) => (
+                <FoodEntryItem
+                  key={entry.id}
+                  entry={entry}
+                  onDelete={removeEntry}
+                />
+              ))}
+          </AnimatePresence>
 
           {addBreakfast && (
             <AddFoodForm
@@ -66,15 +69,17 @@ const Meals = () => {
         </div>
 
         <div className="flex flex-col gap-2 px-6 w-full items-start mb-6">
-          {dailyEntries
-            .filter((entry) => entry.type === "lunch")
-            .map((entry: FoodEntry) => (
-              <FoodEntryItem
-                key={entry.id}
-                entry={entry}
-                onDelete={removeEntry}
-              />
-            ))}
+          <AnimatePresence>
+            {dailyEntries
+              .filter((entry) => entry.type === "lunch")
+              .map((entry: FoodEntry) => (
+                <FoodEntryItem
+                  key={entry.id}
+                  entry={entry}
+                  onDelete={removeEntry}
+                />
+              ))}
+          </AnimatePresence>
 
           {addLunch && (
             <AddFoodForm onClose={() => setAddLunch(false)} mealType="lunch" />
@@ -92,15 +97,17 @@ const Meals = () => {
         </div>
 
         <div className="flex flex-col gap-2 px-6 mb-6 w-full items-start">
-          {dailyEntries
-            .filter((entry) => entry.type === "dinner")
-            .map((entry: FoodEntry) => (
-              <FoodEntryItem
-                key={entry.id}
-                entry={entry}
-                onDelete={removeEntry}
-              />
-            ))}
+          <AnimatePresence>
+            {dailyEntries
+              .filter((entry) => entry.type === "dinner")
+              .map((entry: FoodEntry) => (
+                <FoodEntryItem
+                  key={entry.id}
+                  entry={entry}
+                  onDelete={removeEntry}
+                />
+              ))}
+          </AnimatePresence>
 
           {addDinner && (
             <AddFoodForm
@@ -121,15 +128,17 @@ const Meals = () => {
         </div>
 
         <div className="flex flex-col gap-2 px-6 w-full items-start mb-6">
-          {dailyEntries
-            .filter((entry) => entry.type === "snack")
-            .map((entry: FoodEntry) => (
-              <FoodEntryItem
-                key={entry.id}
-                entry={entry}
-                onDelete={removeEntry}
-              />
-            ))}
+          <AnimatePresence>
+            {dailyEntries
+              .filter((entry) => entry.type === "snack")
+              .map((entry: FoodEntry) => (
+                <FoodEntryItem
+                  key={entry.id}
+                  entry={entry}
+                  onDelete={removeEntry}
+                />
+              ))}
+          </AnimatePresence>
 
           {addSnack && (
             <AddFoodForm onClose={() => setAddSnack(false)} mealType="snack" />
