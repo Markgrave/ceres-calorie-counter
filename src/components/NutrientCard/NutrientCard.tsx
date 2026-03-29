@@ -3,7 +3,7 @@ import type { SearchResult } from "../../types";
 const NutrientCard = ({ result }: { result: SearchResult }) => {
   return (
     <div className="flex flex-col md:flex-row justify-between gap-3 w-full p-4 bg-(--bg-secondary) dark:bg-(--dark-bg-quaternary) rounded-2xl shadow-md text-xs">
-      <div className="flex flex-row justify-between items-start md:items-center w-full md:w-auto md:flex-1 min-w-0">
+      <div className="flex flex-row justify-between items-center w-full md:w-auto md:flex-1 min-w-0">
         <div className="flex flex-col flex-1 min-w-0 text-left mr-2">
           <span className="text-gray-400 text-[0.6rem] uppercase tracking-wider">
             Name

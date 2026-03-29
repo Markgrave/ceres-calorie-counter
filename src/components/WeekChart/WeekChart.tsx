@@ -35,7 +35,7 @@ const WeekChart = () => {
 
   return (
     <section className="w-full md:w-2/5 h-full bg-(--bg-secondary) dark:bg-(--dark-bg-secondary) rounded-2xl shadow-md p-4">
-      <div className="bg-(--bg-secondary) dark:bg-(--dark-bg-tertiary) border-2 border-gray-100 dark:border-gray-700 rounded-2xl p-6 md:p-6 shadow-md aspect-video">
+      <div className="bg-(--bg-secondary) dark:bg-(--dark-bg-tertiary) border-2 border-gray-100 dark:border-gray-700 rounded-2xl p-3 md:p-6 shadow-md aspect-video">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data}>
             <XAxis dataKey="name" />
