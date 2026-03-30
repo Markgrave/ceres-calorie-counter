@@ -11,7 +11,7 @@ import { useCalorieStore } from "../../lib/store";
 const DatePicker = () => {
   const { selectedDate, setSelectedDate } = useCalorieStore();
   const defaultClassNames = getDefaultClassNames();
-  const [show, setShow] = useState<boolean>(false);
+  const [show, setShow] = useState(false);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);

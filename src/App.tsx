@@ -9,7 +9,7 @@ import { useCalorieStore } from "./lib/store";
 import { useState } from "react";
 
 const App = () => {
-  const [goalsOpen, setGoalsOpen] = useState<boolean>(false);
+  const [goalsOpen, setGoalsOpen] = useState(false);
   const { theme } = useCalorieStore();
 
   return (

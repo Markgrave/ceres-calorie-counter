@@ -1,6 +1,6 @@
 import { useForm, Controller, type SubmitHandler } from "react-hook-form";
 import { useEffect, useRef } from "react";
-import Select from "react-select";
+import Select, { type StylesConfig } from "react-select";
 import { motion, AnimatePresence } from "framer-motion";
 
 import type { Goal } from "../../types";
@@ -17,7 +17,7 @@ const goalOptions = [
   { value: "weight loss", label: "Lose" },
   { value: "weight maintenance", label: "Maintain" },
   { value: "muscle gain", label: "Gain" },
-];
+] as const;
 
 const activityOptions = [
   { value: "sedentary", label: "Sedentary" },
@@ -25,12 +25,12 @@ const activityOptions = [
   { value: "moderate", label: "Moderate" },
   { value: "active", label: "Active" },
   { value: "veryActive", label: "Very Active" },
-];
+] as const;
 
 const genderOptions = [
   { value: "male", label: "Male" },
   { value: "female", label: "Female" },
-];
+] as const;
 
 const activityMultipliers = {
   sedentary: 1.2,
@@ -38,7 +38,7 @@ const activityMultipliers = {
   moderate: 1.55,
   active: 1.725,
   veryActive: 1.9,
-};
+} as const;
 
 const calculateTDEE = ({
   weight,
@@ -57,8 +57,8 @@ const calculateTDEE = ({
   return bmr * activityMultipliers[activityLevel];
 };
 
-const styles = {
-  control: (base: any) => ({
+const styles: StylesConfig<{ value: string; label: string }, false> = {
+  control: (base) => ({
     ...base,
     backgroundColor: "#f5f5f5",
     border: "none",
@@ -68,7 +68,7 @@ const styles = {
     boxShadow: "none",
     fontWeight: "bold",
   }),
-  option: (base: any) => ({
+  option: (base) => ({
     ...base,
     backgroundColor: "#ffffff",
     color: "black",
@@ -78,21 +78,21 @@ const styles = {
       backgroundColor: "oklch(87.2% 0.01 258.338)",
     },
   }),
-  menu: (base: any) => ({
+  menu: (base) => ({
     ...base,
     borderRadius: "1rem",
   }),
-  menuList: (base: any) => ({
+  menuList: (base) => ({
     ...base,
     padding: 0,
     borderRadius: "1rem",
   }),
-  placeholder: (base: any) => ({
+  placeholder: (base) => ({
     ...base,
     color: "black",
   }),
   indicatorSeparator: () => ({ display: "none" }),
-  dropdownIndicator: (base: any) => ({
+  dropdownIndicator: (base) => ({
     ...base,
     color: "black",
   }),
