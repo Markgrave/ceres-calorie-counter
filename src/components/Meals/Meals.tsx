@@ -31,7 +31,7 @@ const Meals = () => {
 
   return (
     <div className="w-full md:w-1/2 h-fit bg-(--bg-secondary) dark:bg-(--dark-bg-secondary) rounded-2xl p-3 shadow-md">
-      <div className="flex flex-col justify-start items-center h-full bg-(--bg-secondary) dark:bg-(--dark-bg-tertiary) border-2 border-gray-100 dark:border-gray-700 rounded-2xl px-6 pt-6 pb-0 md:p-10 shadow-md gap-1">
+      <div className="flex flex-col justify-start items-center h-full bg-(--bg-secondary) dark:bg-(--dark-bg-tertiary) border-2 border-gray-100 dark:border-gray-700 rounded-2xl px-6 pt-16 pb-0 md:p-10 shadow-md gap-1">
         <div className="flex flex-row items-center w-full gap-2">
           <MdOutlineFreeBreakfast className="text-black dark:text-white" />
           <h2 className="text-xl font-bold">Breakfast</h2>
