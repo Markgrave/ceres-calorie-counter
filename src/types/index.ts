@@ -22,6 +22,8 @@ export interface FoodEntry {
   date: string;
 }
 
+export type MealType = FoodEntry["type"];
+
 export interface Goal {
   calories: number;
   protein: number;
