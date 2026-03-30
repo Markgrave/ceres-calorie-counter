@@ -27,4 +27,10 @@ export interface Goal {
   protein: number;
   carbs: number;
   fat: number;
+  goalType: "custom" | "weight loss" | "weight maintenance" | "muscle gain";
+  weight?: number;
+  height?: number;
+  age?: number;
+  gender?: "male" | "female";
+  activityLevel?: "sedentary" | "light" | "moderate" | "active" | "veryActive";
 }

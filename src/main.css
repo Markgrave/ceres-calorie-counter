@@ -2,7 +2,6 @@
 @import "tailwindcss";
 
 body {
-  background-color: var(--bg-primary);
   font-family: var(--font);
 }
 
@@ -17,7 +16,28 @@ body {
   --fat: #ec4899;
   --bg-primary: #f0f4f4;
   --bg-secondary: #f5f5f5;
-  --bg-tertiary: #c2c2c2;
+  --bg-tertiary: oklch(87.2% 0.007 219.6);
 
-  --bg-gradient: linear-gradient(to bottom, #f0f4f4, #f5f5f5);
+  --dark-bg-primary: #212529;
+  --dark-bg-secondary: #343a40;
+  --dark-bg-tertiary: #495057;
+  --dark-bg-quaternary: #6c757d;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+.rdp-root {
+  --rdp-accent-color: var(--primary);
+  --rdp-accent-background-color: var(--bg-primary);
+}
+
+.dark .rdp-root {
+  --rdp-accent-color: var(--primary);
+  --rdp-accent-background-color: var(--dark-bg-secondary);
+  --rdp-selected-border: 2px solid var(--primary);
+}
+
+.rdp-selected .rdp-day_button {
+  background-color: var(--rdp-accent-color);
+  color: white;
 }
