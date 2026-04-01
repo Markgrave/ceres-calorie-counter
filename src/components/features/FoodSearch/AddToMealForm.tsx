@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { RxCross1 } from "react-icons/rx";
 import { RiSaveFill } from "react-icons/ri";
 
-import { useCalorieStore } from "../../lib/store";
-import type { SearchResult, MealType } from "../../types";
+import { useCalorieStore } from "../../../lib/store";
+import type { SearchResult, MealType } from "../../../types";
 
 interface AddToMealFormProps {
   result: SearchResult;

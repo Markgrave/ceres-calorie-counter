@@ -5,12 +5,12 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 import { isSameDay, compareAsc } from "date-fns";
 import { motion } from "framer-motion";
 
-import { useCalorieStore } from "../../lib/store";
-import type { FoodEntry } from "../../types";
+import { useCalorieStore } from "../../../lib/store";
+import type { FoodEntry, MealType } from "../../../types";
 
 interface FormProps {
   onClose: () => void;
-  mealType: FoodEntry["type"];
+  mealType: MealType;
   existingEntry?: FoodEntry;
 }
 

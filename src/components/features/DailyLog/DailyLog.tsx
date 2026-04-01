@@ -1,7 +1,7 @@
-import CircularProgress from "../CircularProgress/CircularProgress.tsx";
-import NutrientsProgress from "../NutrientsProgress/NutrientsProgress.tsx";
-import DatePicker from "../DatePicker/DatePicker.tsx";
-import { useCalorieStore } from "../../lib/store.ts";
+import CircularProgress from "../../ui/CircularProgress/CircularProgress";
+import DatePicker from "./DatePicker";
+import NutrientsProgress from "./NutrientsProgress";
+import { useCalorieStore } from "../../../lib/store";
 
 const DailyLog = () => {
   const { entries, goals, selectedDate } = useCalorieStore();

@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { FaTrashAlt } from "react-icons/fa";
 import { FaPen } from "react-icons/fa";
 
-import type { FoodEntry } from "../../types";
-import AddFoodForm from "../AddFoodForm/AddFoodForm";
+import type { FoodEntry } from "../../../types";
+import AddFoodForm from "./AddFoodForm";
 
 interface FoodEntryItemProps {
   entry: FoodEntry;

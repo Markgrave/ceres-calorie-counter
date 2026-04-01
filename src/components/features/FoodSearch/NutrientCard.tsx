@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { IoIosAdd } from "react-icons/io";
 
-import type { SearchResult } from "../../types";
-import AddToMealForm from "../AddToMealForm/AddToMealForm";
+import type { SearchResult } from "../../../types";
+import AddToMealForm from "./AddToMealForm";
 
 const NutrientCard = ({ result }: { result: SearchResult }) => {
   const [showForm, setShowForm] = useState(false);

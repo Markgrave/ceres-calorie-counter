@@ -7,11 +7,11 @@ import { MdDinnerDining } from "react-icons/md";
 import { IoIosAdd } from "react-icons/io";
 import { MdCookie } from "react-icons/md";
 
-import Button from "../Button/Button";
-import AddFoodForm from "../AddFoodForm/AddFoodForm";
-import FoodEntryItem from "../FoodEntryItem/FoodEntryItem";
-import { useCalorieStore } from "../../lib/store";
-import type { FoodEntry, MealType } from "../../types";
+import Button from "../../ui/Button/Button";
+import AddFoodForm from "./AddFoodForm";
+import FoodEntryItem from "./FoodEntryItem";
+import { useCalorieStore } from "../../../lib/store";
+import type { FoodEntry, MealType } from "../../../types";
 
 const Meals = () => {
   const { entries, removeEntry, selectedDate } = useCalorieStore();

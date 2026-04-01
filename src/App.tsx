@@ -1,9 +1,9 @@
-import DailyLog from "./components/DailyLog/DailyLog.tsx";
-import Header from "./components/Header/Header.tsx";
-import Meals from "./components/Meals/Meals.tsx";
-import FoodSearch from "./components/FoodSearch/FoodSearch.tsx";
-import SetGoalsForm from "./components/SetGoalsForm/SetGoalsForm.tsx";
-import WeekChart from "./components/WeekChart/WeekChart.tsx";
+import DailyLog from "./components/features/DailyLog/DailyLog.tsx";
+import Header from "./components/ui/Header/Header.tsx";
+import Meals from "./components/features/Meals/Meals.tsx";
+import FoodSearch from "./components/features/FoodSearch/FoodSearch.tsx";
+import SetGoalsForm from "./components/settings/SetGoalsForm.tsx";
+import WeekChart from "./components/features/WeeklySummary/WeekChart.tsx";
 import { useCalorieStore } from "./lib/store";
 
 import { useState } from "react";
