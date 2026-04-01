@@ -1,6 +1,7 @@
 import { useDebounce } from "../../hooks/useDebounce";
 import { useState, useEffect } from "react";
 import { searchProducts } from "../../lib/api";
+import axios from "axios";
 import type { SearchResult } from "../../types";
 import NutrientCard from "../NutrientCard/NutrientCard";
 import { TailSpin } from "react-loader-spinner";
@@ -10,6 +11,7 @@ const FoodSearch = () => {
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -17,17 +19,29 @@ const FoodSearch = () => {
     const fetchSuggestions = async () => {
       if (debouncedSearchTerm.length < 3) {
         setResults([]);
+        setError(null);
         return;
       }
 
       setLoading(true);
+      setError(null);
       try {
-        const products = await searchProducts(debouncedSearchTerm);
+        const products = await searchProducts(
+          debouncedSearchTerm,
+          controller.signal,
+        );
         setResults(products);
-      } catch (error) {
-        console.error(error);
+      } catch (err) {
+        if (axios.isCancel(err)) {
+          return;
+        }
+        console.error(err);
+        setError("Failed to fetch products. Please try again.");
+        setResults([]);
       } finally {
-        setLoading(false);
+        if (!controller.signal.aborted) {
+          setLoading(false);
+        }
       }
     };
 
@@ -46,6 +60,11 @@ const FoodSearch = () => {
           placeholder="Search for a product..."
           className="w-full rounded-2xl p-3 shadow-md bg-(--bg-secondary) dark:bg-(--dark-bg-quaternary) mb-6"
         />
+        {error && (
+          <div className="w-full text-(--danger) bg-red-100 dark:bg-red-900/30 p-3 rounded-xl mb-4 text-sm text-center border-2 border-red-200 dark:border-red-800">
+            {error}
+          </div>
+        )}
         {loading && (
           <TailSpin
             visible={true}

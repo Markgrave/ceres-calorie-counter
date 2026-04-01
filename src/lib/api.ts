@@ -26,9 +26,11 @@ const axiosInstance = axios.create({
 
 export const searchProducts = async (
   searchQuery: string,
+  signal?: AbortSignal
 ): Promise<SearchResult[]> => {
   const response = await axiosInstance.get<OpenFoodFactsResponse>(
     `cgi/search.pl?search_terms=${searchQuery}&search_simple=1&page_size=5&json=1`,
+    { signal }
   );
 
   const products: SearchResult[] = response.data.products.map((product) => ({
