@@ -54,7 +54,7 @@ const Meals = () => {
 
   return (
     <div className="w-full md:w-1/2 h-fit bg-(--bg-secondary) dark:bg-(--dark-bg-secondary) rounded-2xl p-3 shadow-md">
-      <div className="flex flex-col justify-start items-center h-full bg-(--bg-secondary) dark:bg-(--dark-bg-tertiary) border-2 border-gray-100 dark:border-gray-700 rounded-2xl px-6 pt-6 pb-0 md:p-10 shadow-md gap-1">
+      <div className="flex flex-col justify-start items-center h-full bg-(--bg-secondary) dark:bg-(--dark-bg-tertiary) border-2 border-gray-100 dark:border-gray-700 rounded-2xl px-2 md:px-6 pt-6 pb-0 md:p-10 shadow-md gap-1">
         {MEAL_CONFIG.map((meal) => (
           <div key={meal.type} className="w-full">
             <div className="flex flex-row items-center w-full gap-2">
@@ -62,7 +62,7 @@ const Meals = () => {
               <h2 className="text-xl font-bold">{meal.label}</h2>
             </div>
 
-            <div className="flex flex-col gap-2 px-6 w-full items-start mb-6">
+            <div className="flex flex-col gap-2 px-2 md:px-6 w-full items-start mb-6">
               <AnimatePresence>
                 {dailyEntries
                   .filter((entry) => entry.type === meal.type)

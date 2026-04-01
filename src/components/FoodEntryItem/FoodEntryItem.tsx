@@ -24,47 +24,49 @@ const FoodEntryItem = ({ entry, onDelete }: FoodEntryItemProps) => {
       transition={{ duration: 0.2 }}
       className="flex flex-row justify-between gap-3 w-full px-4 py-2 bg-(--bg-secondary) dark:bg-(--dark-bg-quaternary) rounded-2xl shadow-md"
     >
-      <div className="flex flex-row justify-between items-center w-3/5">
+      <div className="flex flex-row justify-between items-center w-4/5 md:w-3/5">
         <div>
-          <span className="text-gray-400 text-[0.6rem] uppercase tracking-wider">
+          <span className="text-gray-400 md:text-[0.6rem] text-[0.4rem] uppercase tracking-wider">
             Name
           </span>
-          <p className="text-center">{entry.name}</p>
+          <p className="text-center text-[0.7rem] md:text-base">{entry.name}</p>
         </div>
 
         <div>
-          <span className="text-gray-400 text-[0.6rem] uppercase tracking-wider">
+          <span className="text-gray-400 md:text-[0.6rem] text-[0.4rem] uppercase tracking-wider">
             Serving
           </span>
-          <p className="text-center">
+          <p className="text-center text-[0.7rem] md:text-base">
             {entry.servingSize}
-            <span className="text-[0.7rem] tracking-wider">g</span>
+            <span className="text-xs md:text-[0.7rem] tracking-wider">g</span>
           </p>
         </div>
 
         <div>
-          <span className="text-gray-400 text-[0.6rem] uppercase tracking-wider">
+          <span className="text-gray-400 md:text-[0.6rem] text-[0.4rem] uppercase tracking-wider">
             Calories
           </span>
-          <p className="text-center">
+          <p className="text-center text-[0.7rem] md:text-base">
             {entry.calories}
-            <span className="text-[0.7rem] tracking-wider">kcal</span>
+            <span className="text-xs md:text-[0.7rem] tracking-wider">
+              kcal
+            </span>
           </p>
         </div>
       </div>
 
-      <div className="flex flex-row justify-center items-center gap-4">
+      <div className="flex flex-row justify-center items-center gap-2 md:gap-4">
         <button
           className="bg-gray-200 p-2 rounded-lg hover:bg-gray-300 transition-colors cursor-pointer"
           onClick={() => setIsEditing(!isEditing)}
         >
-          <FaPen className="text-md dark:text-(--dark-bg-tertiary)" />
+          <FaPen className="text-xs md:text-base dark:text-(--dark-bg-tertiary)" />
         </button>
         <button
           className="bg-gray-200 p-2 rounded-lg hover:bg-gray-300 transition-colors cursor-pointer"
           onClick={() => onDelete(entry.id)}
         >
-          <FaTrashAlt className="text-md dark:text-(--dark-bg-tertiary)" />
+          <FaTrashAlt className="text-xs md:text-base dark:text-(--dark-bg-tertiary)" />
         </button>
       </div>
     </motion.div>

@@ -9,7 +9,7 @@ const NutrientCard = ({ result }: { result: SearchResult }) => {
             Name
           </span>
           <h2
-            className="truncate font-medium text-sm md:text-xs text-wrap md:text-nowrap line-clamp-2 md:line-clamp-none"
+            className="font-medium text-xs md:text-sm line-clamp-2 md:line-clamp-1"
             title={result.name}
           >
             {result.name}
