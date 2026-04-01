@@ -6,7 +6,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import { useCalorieStore } from "../../lib/store";
+import { useCalorieStore } from "../../../lib/store";
 import { subDays, format } from "date-fns";
 import { useEffect, useState } from "react";
 

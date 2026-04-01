@@ -1,6 +1,6 @@
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { useCalorieStore } from "../../lib/store";
+import { useCalorieStore } from "../../../lib/store";
 
 const CircularProgress = () => {
   const { entries, goals, selectedDate, theme } = useCalorieStore();

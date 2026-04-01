@@ -1,4 +1,4 @@
-import CircularProgress from "../../ui/CircularProgress/CircularProgress";
+import CircularProgress from "./CircularProgress";
 import DatePicker from "./DatePicker";
 import NutrientsProgress from "./NutrientsProgress";
 import { useCalorieStore } from "../../../lib/store";

@@ -6,7 +6,7 @@ import { FaLessThan } from "react-icons/fa6";
 import { FaGreaterThan } from "react-icons/fa6";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { useCalorieStore } from "../../lib/store";
+import { useCalorieStore } from "../../../lib/store";
 
 const DatePicker = () => {
   const { selectedDate, setSelectedDate } = useCalorieStore();

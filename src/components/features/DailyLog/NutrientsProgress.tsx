@@ -1,5 +1,5 @@
 import ProgressBar from "@ramonak/react-progress-bar";
-import { useCalorieStore } from "../../lib/store";
+import { useCalorieStore } from "../../../lib/store";
 
 const NutrientsProgress = () => {
   const { entries, goals, selectedDate } = useCalorieStore();

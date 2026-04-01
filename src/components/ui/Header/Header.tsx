@@ -2,7 +2,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { IoMoon } from "react-icons/io5";
 import { IoSunny } from "react-icons/io5";
 
-import { useCalorieStore } from "../../lib/store";
+import { useCalorieStore } from "../../../lib/store";
 import { motion } from "framer-motion";
 
 interface HeaderProps {

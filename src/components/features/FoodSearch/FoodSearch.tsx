@@ -1,9 +1,9 @@
-import { useDebounce } from "../../hooks/useDebounce";
+import { useDebounce } from "../../../hooks/useDebounce";
 import { useState, useEffect } from "react";
-import { searchProducts } from "../../lib/api";
+import { searchProducts } from "../../../lib/api";
 import axios from "axios";
-import type { SearchResult } from "../../types";
-import NutrientCard from "../NutrientCard/NutrientCard";
+import type { SearchResult } from "../../../types";
+import NutrientCard from "./NutrientCard";
 import { TailSpin } from "react-loader-spinner";
 
 const FoodSearch = () => {
