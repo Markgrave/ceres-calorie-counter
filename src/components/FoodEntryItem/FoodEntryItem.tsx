@@ -24,21 +24,23 @@ const FoodEntryItem = ({ entry, onDelete }: FoodEntryItemProps) => {
       transition={{ duration: 0.2 }}
       className="flex flex-row justify-between gap-3 w-full px-4 py-2 bg-(--bg-secondary) dark:bg-(--dark-bg-quaternary) rounded-2xl shadow-md"
     >
-      <div className="flex flex-row justify-between items-center w-4/5 md:w-3/5">
+      <div className="flex flex-row justify-between items-center w-4/5 gap-2">
         <div>
           <span className="text-gray-400 md:text-[0.6rem] text-[0.4rem] uppercase tracking-wider">
             Name
           </span>
-          <p className="text-center text-[0.7rem] md:text-base">{entry.name}</p>
+          <p className="text-left text-[0.7rem] md:text-sm">
+            {entry.name}
+          </p>
         </div>
 
         <div>
           <span className="text-gray-400 md:text-[0.6rem] text-[0.4rem] uppercase tracking-wider">
             Serving
           </span>
-          <p className="text-center text-[0.7rem] md:text-base">
+          <p className="text-center text-[0.7rem] md:text-sm">
             {entry.servingSize}
-            <span className="text-xs md:text-[0.7rem] tracking-wider">g</span>
+            <span className="text-[0.7rem]">g</span>
           </p>
         </div>
 
@@ -46,11 +48,9 @@ const FoodEntryItem = ({ entry, onDelete }: FoodEntryItemProps) => {
           <span className="text-gray-400 md:text-[0.6rem] text-[0.4rem] uppercase tracking-wider">
             Calories
           </span>
-          <p className="text-center text-[0.7rem] md:text-base">
+          <p className="text-center text-[0.7rem] md:text-sm">
             {entry.calories}
-            <span className="text-xs md:text-[0.7rem] tracking-wider">
-              kcal
-            </span>
+            <span className="text-[0.7rem] md:tracking-wider">kcal</span>
           </p>
         </div>
       </div>

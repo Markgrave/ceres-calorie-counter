@@ -90,8 +90,8 @@ const Meals = () => {
                 }
                 disabled={activeForms[meal.type]}
               >
-                <IoIosAdd className="text-black dark:text-white text-3xl" />
-                <p>Add Food</p>
+                <IoIosAdd className="text-black dark:text-white text-2xl md:text-3xl" />
+                <p className="text-sm md:text-base">Add Food</p>
               </Button>
             </div>
           </div>
