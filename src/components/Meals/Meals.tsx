@@ -15,7 +15,9 @@ import type { FoodEntry, MealType } from "../../types";
 
 const Meals = () => {
   const { entries, removeEntry, selectedDate } = useCalorieStore();
-  const [activeForms, setActiveForms] = useState<Partial<Record<MealType, boolean>>>({});
+  const [activeForms, setActiveForms] = useState<
+    Partial<Record<MealType, boolean>>
+  >({});
 
   const dailyEntries = entries.filter((entry) => entry.date === selectedDate);
 
@@ -28,15 +30,31 @@ const Meals = () => {
     label: string;
     icon: React.ReactNode;
   }[] = [
-    { type: "breakfast", label: "Breakfast", icon: <MdOutlineFreeBreakfast className="text-black dark:text-white" /> },
-    { type: "lunch", label: "Lunch", icon: <FaBowlFood className="text-black dark:text-white" /> },
-    { type: "dinner", label: "Dinner", icon: <MdDinnerDining className="text-black dark:text-white" /> },
-    { type: "snack", label: "Snacks", icon: <MdCookie className="text-black dark:text-white" /> },
+    {
+      type: "breakfast",
+      label: "Breakfast",
+      icon: <MdOutlineFreeBreakfast className="text-black dark:text-white" />,
+    },
+    {
+      type: "lunch",
+      label: "Lunch",
+      icon: <FaBowlFood className="text-black dark:text-white" />,
+    },
+    {
+      type: "dinner",
+      label: "Dinner",
+      icon: <MdDinnerDining className="text-black dark:text-white" />,
+    },
+    {
+      type: "snack",
+      label: "Snacks",
+      icon: <MdCookie className="text-black dark:text-white" />,
+    },
   ];
 
   return (
     <div className="w-full md:w-1/2 h-fit bg-(--bg-secondary) dark:bg-(--dark-bg-secondary) rounded-2xl p-3 shadow-md">
-      <div className="flex flex-col justify-start items-center h-full bg-(--bg-secondary) dark:bg-(--dark-bg-tertiary) border-2 border-gray-100 dark:border-gray-700 rounded-2xl px-6 pt-16 pb-0 md:p-10 shadow-md gap-1">
+      <div className="flex flex-col justify-start items-center h-full bg-(--bg-secondary) dark:bg-(--dark-bg-tertiary) border-2 border-gray-100 dark:border-gray-700 rounded-2xl px-6 pt-6 pb-0 md:p-10 shadow-md gap-1">
         {MEAL_CONFIG.map((meal) => (
           <div key={meal.type} className="w-full">
             <div className="flex flex-row items-center w-full gap-2">
